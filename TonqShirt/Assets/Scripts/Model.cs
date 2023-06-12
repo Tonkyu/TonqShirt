@@ -24,6 +24,5 @@ public class Model : MonoBehaviour
     {
         _img.sprite = _sprites[imgId];
         _img.preserveAspect = true;
-        Debug.Log(imgId);
     }
 }

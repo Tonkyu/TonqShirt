@@ -19,6 +19,5 @@ public class ModelSelectButton : MonoBehaviour
     public void OnClick()
     {
         _model.UpdateImage(_imgId);
-        Debug.Log("push");
     }
 }
