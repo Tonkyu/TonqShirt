@@ -126,19 +126,16 @@ public class Tshirt : MonoBehaviour
 
     public void OnChangeShoulderWidth()
     {
-        Debug.Log("Shoulder : " + _shoulderSlider.value);
         _shoulderWidth = Easing(_shoulderSlider.value, _minShoulderWidth, _maxShoulderWidth);
     }
 
     public void OnChangeGirth()
     {
-        Debug.Log("Girth : " + _girthSlider.value);
         _girth = Easing(_girthSlider.value, _minGirth, _maxGirth);
     }
 
     public void OnChangeSleeveLength()
     {
-        Debug.Log("Sleeve : " + _sleeveSlider.value);
         _sleeveLength = Easing(_sleeveSlider.value, _minSleeveLength, _maxSleeveLength);
     }
 
