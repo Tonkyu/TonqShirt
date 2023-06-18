@@ -8,10 +8,11 @@ public class MyCamera : MonoBehaviour
 {
     [SerializeField] private Image _img = default;
     [SerializeField] private WebCamTexture _webCamTexture;
+    [SerializeField] private bool _useCamera;
 
     private void Start()
     {
-        PlayCamera();
+        if (_useCamera) PlayCamera();
     }
 
     /// <summary>
@@ -22,8 +23,8 @@ public class MyCamera : MonoBehaviour
         try
         {
             StopCamera();
-            var cameraDevice = WebCamTexture.devices[1];
-            Debug.Log(WebCamTexture.devices.Length);
+            var cameraDevice = WebCamTexture.devices[WebCamTexture.devices.Length-1];
+            Debug.Log("Camera : " + cameraDevice.name);
             var cameraImageSize = ((RectTransform) _img.transform).sizeDelta;
             _webCamTexture = new WebCamTexture(
                 cameraDevice.name,

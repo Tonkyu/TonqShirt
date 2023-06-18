@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class ModelSelectButton : MonoBehaviour
 {
-    [SerializeField] private int _imgId;
-    [SerializeField] private Model _model;
+    [SerializeField] private ModelSelectButtonManager _manager;
+    [SerializeField] public int imgId;
+    [SerializeField] public Vector3 neckCenter;
+
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+
     }
 
     public void OnClick()
     {
-        _model.UpdateImage(_imgId);
+        _manager.UpdateModel(this);
     }
 }
