@@ -2,6 +2,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tshirt : MonoBehaviour
 {
@@ -21,6 +22,21 @@ public class Tshirt : MonoBehaviour
     [SerializeField] private float _sleeveInnerOuterRatio;
     [SerializeField] private float _lineWidth;
     [SerializeField] private float _neckSize;
+
+
+    [SerializeField] private float _maxShoulderWidth;
+    [SerializeField] private float _minShoulderWidth;
+
+    [SerializeField] private float _maxGirth;
+    [SerializeField] private float _minGirth;
+
+    [SerializeField] private float _maxSleeveLength;
+    [SerializeField] private float _minSleeveLength;
+
+    [SerializeField] Slider _shoulderSlider;
+    [SerializeField] Slider _girthSlider;
+    [SerializeField] Slider _sleeveSlider;
+
     private List<Vector3> _positions;
 
     void Start()
@@ -106,5 +122,28 @@ public class Tshirt : MonoBehaviour
         Vector3 Q0 = Vector3.Lerp(start, control, t);
         Vector3 Q1 = Vector3.Lerp(control, end, t);
         return Vector3.Lerp(Q0, Q1, t);
+    }
+
+    public void OnChangeShoulderWidth()
+    {
+        Debug.Log("Shoulder : " + _shoulderSlider.value);
+        _shoulderWidth = Easing(_shoulderSlider.value, _minShoulderWidth, _maxShoulderWidth);
+    }
+
+    public void OnChangeGirth()
+    {
+        Debug.Log("Girth : " + _girthSlider.value);
+        _girth = Easing(_girthSlider.value, _minGirth, _maxGirth);
+    }
+
+    public void OnChangeSleeveLength()
+    {
+        Debug.Log("Sleeve : " + _sleeveSlider.value);
+        _sleeveLength = Easing(_sleeveSlider.value, _minSleeveLength, _maxSleeveLength);
+    }
+
+    private static float Easing(float t, float min, float max)
+    {
+        return max * t + min * (1 - t);
     }
 }
