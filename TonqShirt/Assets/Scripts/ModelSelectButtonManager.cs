@@ -21,5 +21,6 @@ public class ModelSelectButtonManager : MonoBehaviour
     {
         _model.UpdateImage(button.imgId);
         _tshirt.neckCenter = button.neckCenter;
+        _tshirt.DrawTshirt();
     }
 }

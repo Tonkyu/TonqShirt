@@ -266,11 +266,11 @@ PrefabInstance:
       objectReference: {fileID: 635181732}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: neckCenter.x
-      value: 2.75
+      value: 195
       objectReference: {fileID: 0}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: neckCenter.y
-      value: 2.15
+      value: 153
       objectReference: {fileID: 0}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: neckCenter.z
@@ -367,11 +367,11 @@ PrefabInstance:
       objectReference: {fileID: 635181732}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: neckCenter.x
-      value: 2.8
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: neckCenter.y
-      value: 2.18
+      value: 155
       objectReference: {fileID: 0}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: _neckCenter.x
@@ -1051,7 +1051,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544083841}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.8823586}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1122,7 +1122,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1778636527}
-  - {fileID: 624721524}
   m_Father: {fileID: 957496593}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1154,11 +1153,11 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624721523}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.90277, y: 0.90277, z: 0.90277}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0.90277016, y: 0.90277016, z: 0.90277016}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 604134634}
+  m_Father: {fileID: 1778636527}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1595,11 +1594,11 @@ PrefabInstance:
       objectReference: {fileID: 635181732}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: neckCenter.x
-      value: 2.75
+      value: 196
       objectReference: {fileID: 0}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: neckCenter.y
-      value: 2
+      value: 144
       objectReference: {fileID: 0}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: _neckCenter.x
@@ -1795,11 +1794,11 @@ PrefabInstance:
       objectReference: {fileID: 635181732}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: neckCenter.x
-      value: 2.7
+      value: 193
       objectReference: {fileID: 0}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: neckCenter.y
-      value: 2.05
+      value: 144
       objectReference: {fileID: 0}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: _neckCenter.x
@@ -2287,11 +2286,11 @@ PrefabInstance:
       objectReference: {fileID: 635181732}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: neckCenter.x
-      value: 2.72
+      value: 193
       objectReference: {fileID: 0}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: neckCenter.y
-      value: 2.25
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: _neckCenter.x
@@ -2366,6 +2365,8 @@ GameObject:
   - component: {fileID: 1778636527}
   - component: {fileID: 1778636529}
   - component: {fileID: 1778636530}
+  - component: {fileID: 1778636532}
+  - component: {fileID: 1778636531}
   m_Layer: 0
   m_Name: Tshirt
   m_TagString: Untagged
@@ -2386,6 +2387,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1926212172}
+  - {fileID: 624721524}
   m_Father: {fileID: 604134634}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2515,7 +2517,7 @@ LineRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 1
 --- !u!114 &1778636530
 MonoBehaviour:
@@ -2530,26 +2532,76 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _model: {fileID: 624721525}
-  _shoulderWidth: 1.3
-  _girth: 2
-  _sleeveLength: 1.2
-  neckCenter: {x: 2.72, y: 2.25, z: 0}
-  _neckWidth: 0.8
-  _sleeveWidth: 0.5
-  _sideAngle: 30
-  _hight: 2.6
+  _shoulderWidth: 97.5
+  _girth: 150
+  _sleeveLength: 90
+  neckCenter: {x: 193, y: 160, z: 0}
+  _neckWidth: 60
+  _sleeveWidth: 37.5
+  _sideAngle: 22.5
+  _hight: 195
   _sleeveInnerOuterRatio: 0.5
   _lineWidth: 0.05
-  _neckSize: 0.8
-  _maxShoulderWidth: 1.7
-  _minShoulderWidth: 1
-  _maxGirth: 2.5
-  _minGirth: 1.5
-  _maxSleeveLength: 1.8
-  _minSleeveLength: 0.8
+  _neckSize: 60
+  _maxShoulderWidth: 127.5
+  _minShoulderWidth: 75
+  _maxGirth: 192.5
+  _minGirth: 112.5
+  _maxSleeveLength: 135
+  _minSleeveLength: 60
   _shoulderSlider: {fileID: 120471340}
   _girthSlider: {fileID: 2143746384}
   _sleeveSlider: {fileID: 53403211}
+--- !u!33 &1778636531
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778636526}
+  m_Mesh: {fileID: 0}
+--- !u!23 &1778636532
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778636526}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!4 &1787398539 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2317600518928609073, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
