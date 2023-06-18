@@ -12,12 +12,11 @@ public class Model : MonoBehaviour
     void Start()
     {
         _img = GetComponent<Image>();
-        UpdateImage(0);
     }
 
     void Update()
     {
-        
+
     }
 
     public void UpdateImage(int imgId)

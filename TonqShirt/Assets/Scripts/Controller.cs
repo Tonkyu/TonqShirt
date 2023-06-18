@@ -7,16 +7,31 @@ public class Controller : MonoBehaviour
     [SerializeField] private Model _model;
     [SerializeField] private Tshirt _tshirt;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.X))
         {
-            _tshirt.ToggleMeshVisibility();
+            ToggleTransparency();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            MoveModel(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            MoveModel(false);
+        }
+    }
+
+    void ToggleTransparency()
+    {
+        _tshirt.ToggleMeshVisibility();
+    }
+
+    void MoveModel(bool direction)
+    {
+        _tshirt.OnMoveModel(direction);
     }
 }

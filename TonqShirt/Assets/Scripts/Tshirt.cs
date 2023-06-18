@@ -21,6 +21,8 @@ public class Tshirt : MonoBehaviour
     [SerializeField] private float _sleeveLength;
 
     public Vector3 neckCenter;
+    [SerializeField] private ModelSelectButton _nowButton;
+
     [SerializeField] private float _neckWidth;
     [SerializeField] private float _sleeveWidth;
     [SerializeField] private float _sideAngle;
@@ -44,6 +46,7 @@ public class Tshirt : MonoBehaviour
     [SerializeField] Slider _sleeveSlider;
 
 
+
     void Start()
     {
         _lineRend = gameObject.GetComponent<LineRenderer>();
@@ -53,8 +56,7 @@ public class Tshirt : MonoBehaviour
         _meshRenderer = gameObject.GetComponent<MeshRenderer>();
         CreateTriangles();
         SetLineRenderer();
-        DrawTshirt();
-
+        SetButton(_nowButton);
     }
 
     void Update()
@@ -64,10 +66,11 @@ public class Tshirt : MonoBehaviour
     void SetLineRenderer()
     {
         _lineRend.numCornerVertices = 10;
-        _lineRend.SetWidth(_lineWidth, _lineWidth);
+        _lineRend.startWidth = _lineWidth;
+        _lineRend.endWidth = _lineWidth;
     }
 
-    public void DrawTshirt()
+    private void DrawTshirt()
     {
         UpdateTshirtPoints();
         _lineRend.positionCount = _positions.Count();
@@ -177,5 +180,27 @@ public class Tshirt : MonoBehaviour
     private static float Easing(float t, float min, float max)
     {
         return max * t + min * (1 - t);
+    }
+
+    public void OnMoveModel(bool direction)
+    {
+        if (direction)
+        {
+            SetButton(_nowButton.rightButton);
+        }
+        else
+        {
+            SetButton(_nowButton.leftButton);
+        }
+    }
+
+    public void SetButton(ModelSelectButton button)
+    {
+        _nowButton.SetColor(false);
+        _nowButton = button;
+        _nowButton.SetColor(true);
+        _model.UpdateImage(_nowButton.imgId);
+        neckCenter = _nowButton.neckCenter;
+        DrawTshirt();
     }
 }
