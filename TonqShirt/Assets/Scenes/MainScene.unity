@@ -2148,9 +2148,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1354642005}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
+      propertyPath: leftButton
+      value: 
+      objectReference: {fileID: 1960634432}
+    - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: _leftButton
       value: 
       objectReference: {fileID: 1960634432}
+    - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
+      propertyPath: rightButton
+      value: 
+      objectReference: {fileID: 552405050}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: _rightButton
       value: 
@@ -2509,6 +2517,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 141
       objectReference: {fileID: 0}
+    - target: {fileID: 6553245171300761102, guid: 6e84edc7e695e4f37963060e55f266d3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8
+      objectReference: {fileID: 0}
     - target: {fileID: 7217500746312115402, guid: 6e84edc7e695e4f37963060e55f266d3, type: 3}
       propertyPath: m_Name
       value: TransparencyIndicator
@@ -2658,7 +2670,7 @@ PrefabInstance:
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: rightButton
       value: 
-      objectReference: {fileID: 1466951192}
+      objectReference: {fileID: 1787398540}
     - target: {fileID: -8796790477908120888, guid: a8d5d02d5016c48c189bb9d677cf9ba1, type: 3}
       propertyPath: _rightButton
       value: 
@@ -3777,28 +3789,27 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 2.3, y: 2.3, z: 0}
-  - {x: 2.0500002, y: 2.3, z: 0}
-  - {x: 1.4500002, y: 1.2607695, z: 0}
-  - {x: 1.8830129, y: 1.0107695, z: 0}
-  - {x: 2.183013, y: 1.5303848, z: 0}
-  - {x: 1.7, y: -0.29999995, z: 0}
-  - {x: 3.7, y: -0.29999995, z: 0}
-  - {x: 3.2169871, y: 1.5303848, z: 0}
-  - {x: 3.516987, y: 1.0107695, z: 0}
-  - {x: 3.9499998, y: 1.2607695, z: 0}
-  - {x: 3.35, y: 2.3, z: 0}
-  - {x: 3.1000001, y: 2.3, z: 0}
-  - {x: 3.0200002, y: 2.1560001, z: 0}
-  - {x: 2.9400003, y: 2.044, z: 0}
-  - {x: 2.86, y: 1.964, z: 0}
-  - {x: 2.78, y: 1.916, z: 0}
-  - {x: 2.7, y: 1.9, z: 0}
-  - {x: 2.6200001, y: 1.916, z: 0}
-  - {x: 2.5400002, y: 1.964, z: 0}
-  - {x: 2.4599998, y: 2.044, z: 0}
-  - {x: 2.3799999, y: 2.1559997, z: 0}
-  - {x: 2.3, y: 2.3, z: 0}
+  - {x: 219.5, y: 160, z: 0}
+  - {x: 239.5, y: 160, z: 0}
+  - {x: 266.73944, y: 106.53961, z: 0}
+  - {x: 235.55421, y: 90.64994, z: 0}
+  - {x: 221.9345, y: 117.380135, z: 0}
+  - {x: 244.5, y: -20, z: 0}
+  - {x: 144.5, y: -20, z: 0}
+  - {x: 167.06552, y: 117.380135, z: 0}
+  - {x: 153.4458, y: 90.64994, z: 0}
+  - {x: 122.26057, y: 106.53961, z: 0}
+  - {x: 149.5, y: 160, z: 0}
+  - {x: 169.5, y: 160, z: 0}
+  - {x: 175.05554, y: 150.12346, z: 0}
+  - {x: 180.61111, y: 142.71605, z: 0}
+  - {x: 186.16666, y: 137.77777, z: 0}
+  - {x: 191.72223, y: 135.30864, z: 0}
+  - {x: 197.27777, y: 135.30864, z: 0}
+  - {x: 202.83334, y: 137.77779, z: 0}
+  - {x: 208.38889, y: 142.71605, z: 0}
+  - {x: 213.94446, y: 150.12346, z: 0}
+  - {x: 219.5, y: 160, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -3878,7 +3889,7 @@ MonoBehaviour:
   _model: {fileID: 624721525}
   _shoulderWidth: 90
   _girth: 100
-  _sleeveLength: 60
+  _sleeveLength: 30
   neckCenter: {x: 194.5, y: 160, z: 0}
   _nowButton: {fileID: 552405050}
   _neckWidth: 50
@@ -3893,7 +3904,7 @@ MonoBehaviour:
   _maxGirth: 192.5
   _minGirth: 100
   _maxSleeveLength: 135
-  _minSleeveLength: 60
+  _minSleeveLength: 30
   _shoulderSlider: {fileID: 120471340}
   _girthSlider: {fileID: 2143746384}
   _sleeveSlider: {fileID: 53403211}
