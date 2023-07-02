@@ -15,6 +15,7 @@ public class DataCollector : MonoBehaviour
     private Joycon          joyconL;
     private Joycon          joyconR;
     [SerializeField] private int mode;
+    bool prevPressed = false;
 
     private StreamWriter sw;
 
@@ -43,27 +44,29 @@ public class DataCollector : MonoBehaviour
 
     void Update()
     {
-        if (joyconR.GetButtonDown(Joycon.Button.DPAD_RIGHT))
+        if (joyconR.GetButton(Joycon.Button.DPAD_RIGHT))
         {
-            AddVectorData();
+            if (!prevPressed) AddVectorData();
+            prevPressed = true;
+        }
+        else prevPressed = false;
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            mode = 0; // shoulder
+            Debug.Log((Controller.ControlMode)mode);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            mode = 1; // shoulder
-            Debug.Log(mode);
+            mode = 1; // sleeve
+            Debug.Log((Controller.ControlMode)mode);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            mode = 2; // sleeve
-            Debug.Log(mode);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            mode = 3; // girth
-            Debug.Log(mode);
+            mode = 2; // girth
+            Debug.Log((Controller.ControlMode)mode);
         }
 
         if (Input.GetKeyDown(KeyCode.Return))

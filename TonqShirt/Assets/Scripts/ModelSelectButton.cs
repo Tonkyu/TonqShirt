@@ -12,6 +12,16 @@ public class ModelSelectButton : MonoBehaviour
     public ModelSelectButton leftButton;
     public ModelSelectButton rightButton;
 
+    public float Girth;
+    public float Sleeve;
+    public float Shoulder;
+
+    void Start()
+    {
+        Girth = _manager.tshirt.minGirth;
+        Sleeve = _manager.tshirt.minSleeveLength;
+        Shoulder = _manager.tshirt.minShoulderWidth;
+    }
     public void OnClick()
     {
         _manager.UpdateModel(this);

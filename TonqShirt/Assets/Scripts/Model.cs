@@ -14,11 +14,6 @@ public class Model : MonoBehaviour
         _img = GetComponent<Image>();
     }
 
-    void Update()
-    {
-
-    }
-
     public void UpdateImage(int imgId)
     {
         _img.sprite = _sprites[imgId];

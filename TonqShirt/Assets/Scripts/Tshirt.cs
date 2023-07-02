@@ -22,6 +22,8 @@ public class Tshirt : MonoBehaviour
 
     public Vector3 neckCenter;
     [SerializeField] private ModelSelectButton _nowButton;
+    [SerializeField] private Indicator _indicator;
+    [SerializeField] private Highlite _highlite;
 
     [SerializeField] private float _neckWidth;
     [SerializeField] private float _sleeveWidth;
@@ -32,14 +34,14 @@ public class Tshirt : MonoBehaviour
     [SerializeField] private float _neckSize;
 
 
-    [SerializeField] private float _maxShoulderWidth;
-    [SerializeField] private float _minShoulderWidth;
+    [SerializeField] public float maxShoulderWidth;
+    [SerializeField] public float minShoulderWidth;
 
-    [SerializeField] private float _maxGirth;
-    [SerializeField] private float _minGirth;
+    [SerializeField] public float maxGirth;
+    [SerializeField] public float minGirth;
 
-    [SerializeField] private float _maxSleeveLength;
-    [SerializeField] private float _minSleeveLength;
+    [SerializeField] public float maxSleeveLength;
+    [SerializeField] public float minSleeveLength;
 
     [SerializeField] Slider _shoulderSlider;
     [SerializeField] Slider _girthSlider;
@@ -161,25 +163,46 @@ public class Tshirt : MonoBehaviour
 
     public void OnChangeShoulderWidth()
     {
-        _shoulderWidth = Easing(_shoulderSlider.value, _minShoulderWidth, _maxShoulderWidth);
+        _shoulderWidth = Easing(_shoulderSlider.value, minShoulderWidth, maxShoulderWidth);
         DrawTshirt();
     }
 
     public void OnChangeGirth()
     {
-        _girth = Easing(_girthSlider.value, _minGirth, _maxGirth);
+        _girth = Easing(_girthSlider.value, minGirth, maxGirth);
         DrawTshirt();
     }
 
     public void OnChangeSleeveLength()
     {
-        _sleeveLength = Easing(_sleeveSlider.value, _minSleeveLength, _maxSleeveLength);
+        _sleeveLength = Easing(_sleeveSlider.value, minSleeveLength, maxSleeveLength);
         DrawTshirt();
     }
 
     private static float Easing(float t, float min, float max)
     {
         return max * t + min * (1 - t);
+    }
+
+    public void IncreaseGirth(float x)
+    {
+        if (x >= 0) _girth = Mathf.Min(_girth + x, maxGirth);
+        else _girth = Mathf.Max(_girth + x, minGirth);
+        DrawTshirt();
+    }
+
+    public void IncreaseShoulder(float x)
+    {
+        if (x >= 0) _shoulderWidth = Mathf.Min(_shoulderWidth + x, maxShoulderWidth);
+        else _shoulderWidth = Mathf.Max(_shoulderWidth + x, minShoulderWidth);
+        DrawTshirt();
+    }
+
+    public void IncreaseSleeve(float x)
+    {
+        if (x >= 0) _sleeveLength = Mathf.Min(_sleeveLength + x, maxSleeveLength);
+        else _sleeveLength = Mathf.Max(_sleeveLength + x, minSleeveLength);
+        DrawTshirt();
     }
 
     public void OnMoveModel(bool direction)
@@ -196,11 +219,19 @@ public class Tshirt : MonoBehaviour
 
     public void SetButton(ModelSelectButton button)
     {
+        _nowButton.Girth = _girth;
+        _nowButton.Sleeve = _sleeveLength;
+        _nowButton.Shoulder = _shoulderWidth;
         _nowButton.SetColor(false);
         _nowButton = button;
         _nowButton.SetColor(true);
         _model.UpdateImage(_nowButton.imgId);
         neckCenter = _nowButton.neckCenter;
+        _indicator.SetCenter(neckCenter);
+        _highlite.SetCenter(neckCenter);
+        _girth = _nowButton.Girth;
+        _sleeveLength = _nowButton.Sleeve;
+        _shoulderWidth = _nowButton.Shoulder;
         DrawTshirt();
     }
 }

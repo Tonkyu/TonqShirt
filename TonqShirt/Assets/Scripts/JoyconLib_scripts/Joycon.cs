@@ -54,8 +54,7 @@ public class Joycon
 
     private float[] stick = { 0, 0 };
 
-    private 
-	IntPtr handle;
+    private IntPtr handle;
 
     byte[] default_buf = { 0x0, 0x1, 0x40, 0x40, 0x0, 0x1, 0x40, 0x40 };
 
@@ -206,7 +205,14 @@ public class Joycon
     }
     public bool GetButtonDown(Button b)
     {
-        return buttons_down[(int)b];
+        bool ans = buttons_down[(int)b];
+        if (ans)
+        {
+            buttons[(int)b] = true;
+            down_[(int)b] = true;
+            UpdateButtonDown(b);
+        }
+        return ans;
     }
     public bool GetButton(Button b)
     {
@@ -214,7 +220,14 @@ public class Joycon
     }
     public bool GetButtonUp(Button b)
     {
-        return buttons_up[(int)b];
+        bool ans = buttons_up[(int)b];
+        if (ans)
+        {
+            buttons[(int)b] = false;
+            down_[(int)b] = true;
+            UpdateButtonUp(b);
+        }
+        return ans;
     }
     public float[] GetStick()
     {
@@ -419,14 +432,25 @@ public class Joycon
                 {
                     for (int i = 0; i < buttons.Length; ++i)
                     {
-                        buttons_up[i] = (down_[i] & !buttons[i]);
-                        buttons_down[i] = (!down_[i] & buttons[i]);
+                        UpdateButtonDown((Button)i);
+                        UpdateButtonUp((Button)i);
                     }
                 }
             }
         }
         return 0;
     }
+
+    private void UpdateButtonDown(Button b)
+    {
+        buttons_up[(int)b] = (down_[(int)b] & !buttons[(int)b]);
+    }
+
+    private void UpdateButtonUp(Button b)
+    {
+        buttons_down[(int)b] = (!down_[(int)b] & buttons[(int)b]);
+    }
+
     private void ExtractIMUValues(byte[] report_buf, int n = 0)
     {
         gyr_r[0] = (Int16)(report_buf[19 + n * 12] | ((report_buf[20 + n * 12] << 8) & 0xff00));
@@ -450,7 +474,7 @@ public class Joycon
 	private Vector3 i_b_;
 	private Vector3 w_a, w_g;
     private Quaternion vec;
-	
+
     private int ProcessIMU(byte[] report_buf)
     {
 
@@ -469,7 +493,7 @@ public class Joycon
         for (int n = 0; n < 3; ++n)
         {
             ExtractIMUValues(report_buf, n);
-            
+
 			float dt_sec = 0.005f * dt;
             sum[0] += gyr_g.x * dt_sec;
             sum[1] += gyr_g.y * dt_sec;
