@@ -16,6 +16,7 @@ public class Controller : MonoBehaviour
     [SerializeField] private Highlite _highlite;
     [SerializeField] private JoyconButton _Abutton;
     [SerializeField] private JoyconButton _Bbutton;
+    [SerializeField] private Stick _stick;
 
     private static readonly Joycon.Button[] buttons =
         Enum.GetValues( typeof( Joycon.Button ) ) as Joycon.Button[];
@@ -196,6 +197,7 @@ public class Controller : MonoBehaviour
         if (mode == JoyconMode.Selected)
         {
             _Bbutton.Activate();
+            _stick.Activate();
             _Abutton.Deactivate();
             _highlite.gameObject.SetActive(false);
         }
@@ -203,6 +205,7 @@ public class Controller : MonoBehaviour
         {
             _Abutton.Activate();
             _Bbutton.Deactivate();
+            _stick.Deactivate();
             _highlite.gameObject.SetActive(true);
         }
     }

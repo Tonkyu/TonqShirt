@@ -36,4 +36,7 @@ TonqShirt/Debug/
 
 # OS generated
 TonqShirt/.DS_Store
+.DS_Store
 TonqShirt/Assets/.DS_Store
+TonqShirt/Assets/Resources/.DS_Store
+
