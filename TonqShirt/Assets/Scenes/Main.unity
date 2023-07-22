@@ -882,9 +882,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71fbaf3316ac49d7bf58d6cbbb8eb04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circle:
+  circleBlack:
   - {fileID: 5266248}
   - {fileID: 192248657}
+  circleWhite: {fileID: 2062159880}
   arrow:
   - {fileID: 697567874}
   - {fileID: 1545919627}

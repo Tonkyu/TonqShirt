@@ -40,3 +40,6 @@ TonqShirt/.DS_Store
 TonqShirt/Assets/.DS_Store
 TonqShirt/Assets/Resources/.DS_Store
 
+final-report/*
+final-report/out/*
+!final-report/out/UserInterface_NakaneAtsuhisa.pdf
