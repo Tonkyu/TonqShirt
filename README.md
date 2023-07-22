@@ -5,6 +5,9 @@
 ## デモ
 https://youtu.be/P3KyV0a5IWU
 
+## 発表資料
+https://docs.google.com/presentation/d/1bh4N0nfCVMiylT75AZvssE_RM4NzZn_-AwwabhhbmCg/edit#slide=id.g25b0c93a812_1_980
+
 ## ファイル構成
 | ディレクトリ/ファイル | 説明 |
 | ---- | ---- |
